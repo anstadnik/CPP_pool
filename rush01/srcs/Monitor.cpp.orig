@@ -1,0 +1,52 @@
+#include <iostream>
+#include "Monitor.hpp"
+#include "TextMonitor.hpp"
+
+Monitor::Monitor(std::string display):monitor(NULL)
+{
+	if (display == "console")
+	{
+		std::cout << "Running in console!" << std::endl;
+		monitor = new TextMonitor();
+	}
+	else if (display == "gui")
+	{
+		std::cout << "Running in gui!" << std::endl;
+	//initialize monitor with gui
+		// monitor = new GraphicalMonitor();
+	}
+	else
+		throw(std::invalid_argument("No known argument \"" + display + "\""));
+}
+
+void	Monitor::run(void)
+{
+	GetData::getData().update();
+	/* std::cout << GetData::getData().getHostname() << std::endl; */
+	/* std::cout << GetData::getData().getUsername() << std::endl; */
+	/* std::cout << GetData::getData().getOsInfo().release << std::endl; */
+	/* std::cout << GetData::getData().getOsInfo().type << std::endl; */
+<<<<<<< HEAD
+	/* std::cout << std::endl << GetData::getData().getTest() << std::endl; */
+	monitor->update();
+=======
+	/* std::cout << std::endl << GetData::getData().getTime() << std::endl; */
+	/* std::cout << GetData::getData().getTest() << std::endl; */
+>>>>>>> e45fc3993e2c13cfc39fb5d54cef61f4a0717abf
+	/* int	ret; */
+	monitor->update();
+	/* while ((ret = monitor->update(GetData::getData())))//change method's name to run */
+	/* { */
+	/* 	delete monitor; */
+	/* 	if (ret == 1) */
+	/* 		;//initialize monitor with gui */
+	/* 	if (ret == 2) */
+	/* 		;//initialize monitor with console */
+	/* } */
+}
+
+Monitor::~Monitor(void)
+{
+	if (monitor)
+		delete monitor;
+}

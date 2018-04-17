@@ -4,8 +4,8 @@ CFLAGS = -Wall -Wextra -Werror
 ODIR = objs/
 SDIR = srcs/
 IDIR = includes/
-NAME = 
-FILES =
+NAME = army
+FILES = ClapTrap.cpp FragTrap.cpp ScavTrap.cpp main.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)

@@ -1,18 +1,23 @@
 .PHONY: clean fclean re r
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror
+FFLAGS = -lncurses -F ~/Library/Frameworks -framework SDL2 -framework SDL2_ttf
 ODIR = objs/
 SDIR = srcs/
 IDIR = includes/
-NAME = 
-FILES =
+NAME = ft_FKrellM
+FILES = GetData.cpp Monitor.cpp TextMonitor.cpp main.cpp GraphicalMonitor.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(addprefix $(ODIR), $(OBJS))
+$(NAME):
 	@echo "\x1b[34m\nCompiling $@\x1b[0m"
-	@$(CC) $(CFLAGS) -I$(IDIR) -o $@ $^
+	@$(CC) $(CFLAGS) $(FFLAGS) -I$(IDIR) -o $@ $(addprefix $(SDIR), $(FILES))
+
+# $(NAME): $(addprefix $(ODIR), $(OBJS))
+# 	@echo "\x1b[34m\nCompiling $@\x1b[0m"
+# 	@$(CC) $(CFLAGS) $(FFALGS) -I$(IDIR) -o $@ $^
 
 $(addprefix $(ODIR), %.o): $(addprefix $(SDIR), %.cpp)
 	@printf "."

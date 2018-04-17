@@ -4,8 +4,8 @@ CFLAGS = -Wall -Wextra -Werror
 ODIR = objs/
 SDIR = srcs/
 IDIR = includes/
-NAME = 
-FILES =
+NAME = magic
+FILES = Peon.cpp Sorcerer.cpp Victim.cpp main.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)

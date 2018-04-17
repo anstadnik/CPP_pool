@@ -4,8 +4,8 @@ CFLAGS = -Wall -Wextra -Werror
 ODIR = objs/
 SDIR = srcs/
 IDIR = includes/
-NAME = 
-FILES =
+NAME = megaphone
+FILES = megaphone.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)
@@ -29,7 +29,3 @@ fclean: clean
 re:
 	@$(MAKE) fclean
 	@$(MAKE)
-
-r: $(NAME)
-	@echo "\x1b[32m\nRunning $(NAME)\n\x1b[0m"
-	@./$<

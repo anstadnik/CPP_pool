@@ -1,11 +1,11 @@
 .PHONY: clean fclean re r
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 ODIR = objs/
 SDIR = srcs/
 IDIR = includes/
-NAME = 
-FILES =
+NAME = span
+FILES = Span.cpp main.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)

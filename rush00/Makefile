@@ -1,18 +1,18 @@
 .PHONY: clean fclean re r
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 ODIR = objs/
 SDIR = srcs/
 IDIR = includes/
-NAME = 
-FILES =
+NAME = ft_retro
+FILES = $(addsuffix .cpp, main Player Vec2 Enemy Entity Curse Bullet Scene)
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(addprefix $(ODIR), $(OBJS))
 	@echo "\x1b[34m\nCompiling $@\x1b[0m"
-	@$(CC) $(CFLAGS) -I$(IDIR) -o $@ $^
+	@$(CC) $(CFLAGS) -flto=thin -lncurses -I$(IDIR) -o $@ $^
 
 $(addprefix $(ODIR), %.o): $(addprefix $(SDIR), %.cpp)
 	@printf "."

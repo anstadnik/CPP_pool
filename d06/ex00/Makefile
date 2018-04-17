@@ -4,8 +4,8 @@ CFLAGS = -Wall -Wextra -Werror
 ODIR = objs/
 SDIR = srcs/
 IDIR = includes/
-NAME = 
-FILES =
+NAME = casts
+FILES = main.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)
@@ -32,4 +32,4 @@ re:
 
 r: $(NAME)
 	@echo "\x1b[32m\nRunning $(NAME)\n\x1b[0m"
-	@./$<
+	@for i in `cat ./tests.txt`; do echo $$i; echo; ./casts $$i; echo; echo; done

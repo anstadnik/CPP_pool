@@ -4,8 +4,8 @@ CFLAGS = -Wall -Wextra -Werror
 ODIR = objs/
 SDIR = srcs/
 IDIR = includes/
-NAME = 
-FILES =
+NAME = hehey
+FILES = AWeapon.cpp Character.cpp Enemy.cpp PlasmaRifle.cpp PowerFist.cpp RadScorpion.cpp SuperMutant.cpp main.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)

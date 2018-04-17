@@ -1,11 +1,16 @@
 .PHONY: clean fclean re r
 CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+# CFLAGS = -Wall -Wextra -Werror -lncurses -F /Library/Frameworks -framework SDL2
+<<<<<<< HEAD
+CFLAGS = -lncurses  -F ~/Library/Frameworks -framework SDL2  -framework SDL2_ttf 
+=======
+CFLAGS = -lncurses -F /Library/Frameworks -framework SDL2
+>>>>>>> 09c5725c5c4be216c4092c4f7dab9f1db38f4851
 ODIR = objs/
 SDIR = srcs/
 IDIR = includes/
-NAME = 
-FILES =
+NAME = ft_FKrellM
+FILES = GetData.cpp Monitor.cpp TextMonitor.cpp main.cpp
 OBJS = $(FILES:.cpp=.o)
 
 all: $(NAME)
